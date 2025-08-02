@@ -7,11 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/njubis/qwikpen-utils.git"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-emoji"
-    }
-  },
   "license": "MIT",
   "publishConfig": {
     "access": "public"
