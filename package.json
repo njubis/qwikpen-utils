@@ -2,6 +2,20 @@
   "name": "@qwikpen/utils",
   "version": "0.0.1",
   "description": "Convenience utils for Qwik",
+  "author": "Njubi Simon <oss@njubi.dev>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njubis/qwikpen-utils.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-emoji"
+    }
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",
