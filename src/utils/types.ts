@@ -30,4 +30,5 @@ export interface SplitOptions {
   openCloseCharacters?: OpenCloseCharacter[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type FlattedElement<T> = T extends any[] ? never : T;
