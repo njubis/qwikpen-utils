@@ -266,3 +266,43 @@ export function getRTLOffsetType(recalculate = false): RTLOffsetType {
   }
   return cachedRTLResult;
 }
+
+/**
+ * Checks if a given element matches a selector.
+ *
+ * @param node the element
+ * @param selector the selector
+ */
+export function matchesSelector(node: Element, selector: string) {
+  const match = document.body.matches;
+  const matchesImpl = (n: Element, s: string) => match.call(n, s);
+  return matchesImpl(node, selector);
+}
+
+/**
+ * Returns the closest parent element that matches a given selector.
+ *
+ * @param node the reference element
+ * @param selector the selector to match
+ * @param stopAt stop traversing when this element is found
+ */
+export function closestParent(
+  node: Element | Signal<Element>,
+  selector: string,
+  stopAt?: Element | Signal<Element>,
+): Element | null {
+  const targetNode = isSignal(node) ? node.value : node;
+  if (targetNode.closest && !stopAt) targetNode.closest(selector);
+
+  let nextNode: Element | null = targetNode;
+  do {
+    if (matchesSelector(nextNode, selector)) return nextNode;
+    nextNode = nextNode.parentElement;
+  } while (
+    nextNode &&
+    nextNode !== stopAt &&
+    nextNode.nodeType === document.ELEMENT_NODE
+  );
+
+  return null;
+}

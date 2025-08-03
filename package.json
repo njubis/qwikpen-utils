@@ -55,7 +55,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "release": "bun publish",
+    "release": "bunx changeset publish",
     "start": "vite --open --mode ssr",
     "test": "echo \"No test specified\" && exit 0",
     "test.unit": "vitest components",
