@@ -7,3 +7,4 @@ export { getDocumentOrShadow } from "./utils/getDocumentOrShadow";
 export { getTargetElement } from "./utils/getTargetElement";
 export { remToPx } from "./utils/remToPx";
 export { convertToColorWithOpacity } from "./utils/provideColorOpacity";
+export * from "./utils/renameObjectKeys";

@@ -1,4 +1,4 @@
-export const renameObjectKey = function <T extends Record<string, any>>(
+export const renameObjectKey = function <T extends Record<string, unknown>>(
   obj: T,
   oldName: keyof T,
   newName: string,
